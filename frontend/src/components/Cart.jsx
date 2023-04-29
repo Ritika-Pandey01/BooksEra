@@ -8,6 +8,7 @@ import {
   getTotal,
 } from '../features/cartSlice';
 import { Link, useNavigate } from 'react-router-dom';
+import PayButton from './PayButton';
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
@@ -107,7 +108,7 @@ const Cart = () => {
               </div>
               <p>Taxes and shipping charges excluded</p>
               {auth._id ? (
-                <button>Check out</button>
+                <PayButton cartItems={cart.cartItems}/>
               ) : (
                 <button
                   className="cart-login"

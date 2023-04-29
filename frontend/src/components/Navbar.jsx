@@ -28,7 +28,7 @@ const Navbar = () => {
         </Logout>
       ) : (
         <AuthLinks>
-          <Link to="/login">Login</Link>
+          <Link to="/login">Login / </Link>
           <Link to="/signup">Signup</Link>
         </AuthLinks>
       )}
@@ -58,7 +58,6 @@ export default Navbar;
 const AuthLinks = styled.div`
   a {
     &:last-child {
-      margin-left: 2rem;
     }
   }
 `;
