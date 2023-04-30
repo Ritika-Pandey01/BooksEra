@@ -18,14 +18,19 @@ const Navbar = () => {
       <Link to="/sustain">BestSellers</Link>
       <Link to="/contact">Contact Us</Link>
       {auth._id ? (
-        <Logout
+        <Links>
+        <div>
+          <Link to="/admin/summary">Admin</Link>
+        </div>
+        <div
           onClick={() => {
             dispatch(logoutUser(null));
             toast.warning('You have logged out!', { position: 'bottom-left' });
           }}
         >
           Logout
-        </Logout>
+        </div>
+        </Links>
       ) : (
         <AuthLinks>
           <Link to="/login">Login / </Link>
@@ -62,8 +67,15 @@ const AuthLinks = styled.div`
   }
 `;
 
-const Logout = styled.div`
+const Links = styled.div`
   color: white;
+  display: flex;
 
-  cursor: pointer;
+  div {
+    cursor: pointer;
+
+    &:last-child {
+      margin-left: 2rem;
+    }
+  }
 `;

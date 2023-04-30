@@ -9,6 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import CheckoutSuccess from './components/CheckoutSuccess';
+import Admindashboard from './components/admin/Admindashboard';
+import Products from './components/admin/Products';
+import Summary from './components/admin/Summary';
+import CreateProducts from './components/admin/CreateProducts';
 function App() {
   return (
     <div className="App">
@@ -21,6 +25,14 @@ function App() {
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+
+          {/* Nesting routes for admin dashboard*/}
+          <Route path="/admin" element={<Admindashboard />} >
+            <Route path="summary" element={<Summary/>} />
+            <Route path="products" element={<Products />} >
+              <Route path="create-products" element={<CreateProducts />}/>
+            </Route>
+          </Route>
           <Route path="/not-found" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/not-found" />} />
         </Routes>

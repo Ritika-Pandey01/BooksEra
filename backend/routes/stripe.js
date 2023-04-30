@@ -1,5 +1,6 @@
 const express = require("express");
 const Stripe = require("stripe");
+const {Order}=require("../models/order");
 require("dotenv").config();
 
 const stripe = Stripe(process.env.STRIPE_KEY);
@@ -7,6 +8,12 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 const router = express.Router();
 
 router.post('/create-checkout-session', async (req, res) => {
+  const customer = await stripe.customers.create({
+    metadata: {
+      userId: req.body.userId,
+      cart: JSON.stringify(req.body.cartItems),
+    },
+  });
   const line_items = req.body.cartItems.map((item) => {
     console.log(item);
     return {
@@ -55,6 +62,7 @@ router.post('/create-checkout-session', async (req, res) => {
   phone_number_collection:{
     enabled:true
   },
+  customer: customer.id,
       line_items,
       mode: 'payment',
       success_url: `${process.env.CLIENT_URL}/checkout-success`,
@@ -63,4 +71,76 @@ router.post('/create-checkout-session', async (req, res) => {
   
     res.send({ url: session.url });
   });
+
+  //Creating Orders
+const createOrder = async (customer, data) => {
+  const Items = JSON.parse(customer.metadata.cart);
+
+  const newOrder = new Order({
+    userId: customer.metadata.userId,
+    customerId: data.customer,
+    paymentIntentId: data.payment_intent,
+    products:Items,
+    subtotal: data.amount_subtotal,
+    total: data.amount_total,
+    shipping: data.customer_details,
+    payment_status: data.payment_status,
+  });
+
+  try {
+    const savedOrder = await newOrder.save();
+    console.log("Processed Order:", savedOrder);
+    //send email
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+  //Stripe webhook
+let endpointSecret;
+router.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
+  //all this is to verify that the webhook is from stripe
+  const sig = req.headers['stripe-signature'];
+  let data;
+    let eventType;
+
+  if(endpointSecret){
+    let event;
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+    console.log("Webhook verified");
+  } catch (err) {
+        console.log(`Webhook Error: ${err.message}`);
+    res.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
+  data = event.data.object;
+  eventType = event.type;
+  }else{
+    //if the webhook is not signing then we do this
+    data = req.body.data.object;
+      eventType = req.body.type;
+  }
+
+  
+
+  // Handle the event session completed: i.e. if this event occurred we will perform these functions
+  if (eventType === "checkout.session.completed") {
+    stripe.customers
+      .retrieve(data.customer)
+      .then( async (customer) => {
+        try {
+          // CREATE ORDER
+          createOrder(customer, data);
+        } catch (err) {
+          console.log(typeof createOrder);
+          console.log(err);
+        }
+      })
+      .catch((err) => console.log(err.message));
+  }
+
+  // Return a 200 res to acknowledge receipt of the event
+  res.send().end();
+});
   module.exports=router;
