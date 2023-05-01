@@ -29,7 +29,7 @@ function App() {
           {/* Nesting routes for admin dashboard*/}
           <Route path="/admin" element={<Admindashboard />} >
             <Route path="summary" element={<Summary/>} />
-            <Route path="products" element={<Products />} >
+            <Route path="books" element={<Products />} >
               <Route path="create-products" element={<CreateProducts />}/>
             </Route>
           </Route>

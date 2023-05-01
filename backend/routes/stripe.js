@@ -1,6 +1,7 @@
 const express = require("express");
 const Stripe = require("stripe");
 const {Order}=require("../models/order");
+
 require("dotenv").config();
 
 const stripe = Stripe(process.env.STRIPE_KEY);
@@ -98,6 +99,9 @@ const createOrder = async (customer, data) => {
 
   //Stripe webhook
 let endpointSecret;
+
+// endpointSecret = process.env.STRIPE_WEB_HOOK;
+
 router.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   //all this is to verify that the webhook is from stripe
   const sig = req.headers['stripe-signature'];

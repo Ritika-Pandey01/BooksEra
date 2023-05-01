@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const signup = require('./routes/signup');
 const login = require('./routes/login');
 const stripe=require('./routes/stripe');
+const book=require('./routes/book');
 
 require('dotenv').config();
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use('/api/signup', signup);
 app.use('/api/login', login);
 app.use('/api/stripe', stripe);
+app.use('/api/books', book);
 
 app.get('/', (req, res) => {
   res.send('Welcome to BooksEra - richness of self');

@@ -13,7 +13,7 @@ function Admindashboard() {
                 <NavLink
                 className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"}
-           to="/admin/products">Products</NavLink>
+           to="/admin/books">Books</NavLink>
             </SideNav>
             <Content>
                 <Outlet/>
