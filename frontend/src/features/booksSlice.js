@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {url} from './apiEndpoints';
+import {setHeaders, url} from './apiEndpoints';
 import { toast } from 'react-toastify';
 const initialState = {
   items: [],
@@ -10,7 +10,7 @@ const initialState = {
 
 export const booksFetch = createAsyncThunk('books/booksFetch', async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/books`);
+    const response = await axios.get(`${url}/books`);
 
     return response?.data;
   } catch (error) {
@@ -23,7 +23,9 @@ export const booksCreate = createAsyncThunk(
   async (values) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/books`,values
+        `${url}/books`,
+        values,
+        setHeaders()
       );
       return response.data;
     } catch (error) {

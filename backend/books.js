@@ -59,7 +59,7 @@ const books = [
     title: 'Begin Again',
     author: 'Emma Lord',
     genre: 'Romance',
-    price: 800,
+    price: 600,
     image:
       'https://res.cloudinary.com/bookspot/image/upload/v1678085395/Books/romance3.png',
   },

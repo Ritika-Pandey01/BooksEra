@@ -2,9 +2,10 @@ const express=require("express");
 const router=express.Router();
 const cloudinary=require("../utils/cloudinary");
 const { Book } = require("../models/book");
+const {isAdmin}=require("../middleware/auth"); 
 
 //Create a product
-router.post("/",async(req,res)=>{
+router.post("/",isAdmin,async(req,res)=>{
     const {title,author,genre,price,image}=req.body; 
     try{
         //if image is given we do this

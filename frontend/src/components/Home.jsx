@@ -23,9 +23,9 @@ const Home = () => {
           <div className="books">
             {data &&
               data?.map((book) => (
-                <div key={book.id} className="book">
+                <div key={book._id} className="book">
                   <h3>{book.title}</h3>
-                  <img src={book.image} alt={book.title}></img>
+                  <img src={book.image.url} alt={book.title}></img>
                   <div className="details">
                     <span className="author">Author: {book.author}</span>
                     <span className="genre">Genre: {book.genre}</span>
