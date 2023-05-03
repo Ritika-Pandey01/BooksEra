@@ -12,7 +12,6 @@ router.post('/create-checkout-session', async (req, res) => {
   const customer = await stripe.customers.create({
     metadata: {
       userId: req.body.userId,
-      cart: JSON.stringify(req.body.cartItems),
     },
   });
   const line_items = req.body.cartItems.map((item) => {
@@ -22,7 +21,7 @@ router.post('/create-checkout-session', async (req, res) => {
         currency: "inr",
         product_data: {
           name: item.title,
-          images: [item.image],
+          images: [item.image.url],
           description: item.author,
           metadata: {
             id: item.id,
@@ -35,6 +34,7 @@ router.post('/create-checkout-session', async (req, res) => {
   });
     //session creates a checkout session
     const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
       shipping_address_collection: {allowed_countries: ['IN']},
   shipping_options: [
     {
@@ -74,14 +74,12 @@ router.post('/create-checkout-session', async (req, res) => {
   });
 
   //Creating Orders
-const createOrder = async (customer, data) => {
-  const Items = JSON.parse(customer.metadata.cart);
-
+const createOrder = async (customer, data,lineItems) => {
   const newOrder = new Order({
     userId: customer.metadata.userId,
     customerId: data.customer,
     paymentIntentId: data.payment_intent,
-    products:Items,
+    products:lineItems.data,
     subtotal: data.amount_subtotal,
     total: data.amount_total,
     shipping: data.customer_details,
@@ -132,14 +130,15 @@ router.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   if (eventType === "checkout.session.completed") {
     stripe.customers
       .retrieve(data.customer)
-      .then( async (customer) => {
-        try {
-          // CREATE ORDER
-          createOrder(customer, data);
-        } catch (err) {
-          console.log(typeof createOrder);
-          console.log(err);
-        }
+      .then((customer) => {
+        stripe.checkout.sessions.listLineItems(
+          data.id,
+        {},
+        function(err,lineItems){
+          console.log("line_items",lineItems);
+          createOrder(customer, data,lineItems);
+        });
+        
       })
       .catch((err) => console.log(err.message));
   }

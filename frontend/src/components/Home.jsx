@@ -1,4 +1,3 @@
-import { useGetAllBooksQuery } from '../features/booksApi';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cartSlice';
 import { useNavigate } from 'react-router';
@@ -7,8 +6,6 @@ const Home = () => {
   const { items: data, status } = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const { data, error, isLoading } = useGetAllBooksQuery();
 
   const handleAddToCart = (book) => {
     dispatch(addToCart(book));

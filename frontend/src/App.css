@@ -68,6 +68,25 @@
   font-size: 20px;
 }
 
+/*Checkout success*/
+.order-placed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(68, 68, 68);
+  min-height: 80vh;
+}
+
+.order-placed h2 {
+  font-size: 30px;
+}
+
+.order-placed p {
+  font-size: 20px;
+}
+
+
 /*Home Page CSS*/
 .home-container {
   padding: 2rem 4rem;
