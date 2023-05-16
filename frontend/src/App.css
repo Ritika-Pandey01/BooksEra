@@ -406,6 +406,64 @@
   color: rgb(97, 97, 97);
 }
 
+/*Bestseller*/
+.bestseller {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 300px;
+  max-width: 100%;
+  height: 450px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    2px 2px 5px rgba(94, 104, 121, 0.3);
+}
+
+.bestseller img {
+  width: 60%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bestList {
+
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.bestseller .link a {
+  text-decoration: none;
+  color: black;
+}
+
+.bestseller .link a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+
+.bestseller .details {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+
+}
+
+
+.bestseller h3 {
+  font-size: 16px;
+  padding: 0px;
+  margin: 0px;
+}
+
 @media screen and (max-width: 800px) {
 
   /*Home Page Responsiveness*/
