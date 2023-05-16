@@ -13,16 +13,17 @@ const Bestseller = () => {
     },[])
   return (
     <div>
-      <h1 className='bestList'>BestSellers</h1>
+      <h1 className='bestList'>Best Sellers</h1>
       <div className="books">
             {books.map((book) => {
               const {rank,title,author,book_image,description,amazon_product_url}=book
               return (
                 <article key={rank} className='bestseller'>
+                <h3>{title}</h3>
                   <div>
                     <img src={book_image} alt={title}/>
                   </div>
-                  <h3>{title}</h3>
+                  
                   <div className='details'>
                   <span className="author"><b>Author:</b> {author}</span>
                   <br/>

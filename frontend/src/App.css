@@ -422,10 +422,10 @@
 }
 
 .bestseller img {
-  width: 60%;
-  margin-top: 1rem;
-  margin-left: auto;
+  width: 45%;
+  margin-left: 4rem;
   margin-right: auto;
+
 }
 
 .bestList {
@@ -459,9 +459,10 @@ a:active {
 
 
 .bestseller h3 {
-  font-size: 16px;
+  font-size: 18px;
   padding: 0px;
-  margin: 0px;
+  justify-content: center;
+  text-align: center;
 }
 
 @media screen and (max-width: 800px) {
