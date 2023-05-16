@@ -15,7 +15,7 @@ const Navbar = () => {
         <h3>BooksEra</h3>
       </Link>
       <Link to="/sustain">Sustainable</Link>
-      <Link to="/sustain">BestSellers</Link>
+      <Link to="/bestseller">BestSellers</Link>
       <Link to="/contact">Contact Us</Link>
       {auth._id ? (
         <Links>

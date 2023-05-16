@@ -15,7 +15,6 @@ router.post('/create-checkout-session', async (req, res) => {
     },
   });
   const line_items = req.body.cartItems.map((item) => {
-    console.log(item);
     return {
       price_data: {
         currency: "inr",
@@ -88,7 +87,9 @@ const createOrder = async (customer, data,lineItems) => {
 
   try {
     const savedOrder = await newOrder.save();
+    res.status(200).send(savedOrder);
     console.log("Processed Order:", savedOrder);
+
     //send email
   } catch (err) {
     console.log(err);
@@ -121,7 +122,8 @@ router.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   }else{
     //if the webhook is not signing then we do this
     data = req.body.data.object;
-      eventType = req.body.type;
+    console.log("data",data);
+    eventType = req.body.type;
   }
 
   
@@ -131,13 +133,16 @@ router.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
     stripe.customers
       .retrieve(data.customer)
       .then((customer) => {
+        console.log("customer",customer);
         stripe.checkout.sessions.listLineItems(
           data.id,
         {},
         function(err,lineItems){
           console.log("line_items",lineItems);
+          
           createOrder(customer, data,lineItems);
-        });
+        }
+        );
         
       })
       .catch((err) => console.log(err.message));

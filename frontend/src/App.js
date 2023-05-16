@@ -13,6 +13,7 @@ import Admindashboard from './components/admin/Admindashboard';
 import Products from './components/admin/Products';
 import Summary from './components/admin/Summary';
 import CreateProducts from './components/admin/CreateProducts';
+import Bestseller from './components/Bestseller';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/bestseller" element={<Bestseller/>} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
