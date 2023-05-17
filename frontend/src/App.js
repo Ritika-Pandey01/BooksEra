@@ -14,6 +14,7 @@ import Products from './components/admin/Products';
 import Summary from './components/admin/Summary';
 import CreateProducts from './components/admin/CreateProducts';
 import Bestseller from './components/Bestseller';
+import Sustainable from './components/Sustainable';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/bestseller" element={<Bestseller/>} />
+          <Route path="/sustain" element={<Sustainable/>} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />

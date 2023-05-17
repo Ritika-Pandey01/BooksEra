@@ -1,15 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 
-// const {REACT_APP_BOOK_API}=process.env;
-
 const Bestseller = () => {
     const [books,setBook]=useState([]);
     useEffect(()=>{
         const fetchBest=async()=>{
             const res=await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_BOOK_API}`);
             setBook(res.data.results.books);
-            // console.log(res.data.results.books);
         }
         fetchBest()
     },[])
