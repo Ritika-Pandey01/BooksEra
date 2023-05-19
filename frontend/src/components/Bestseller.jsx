@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-
+import image from '../images/nytbest.png';
 const Bestseller = () => {
     const [books,setBook]=useState([]);
     useEffect(()=>{
@@ -11,8 +11,9 @@ const Bestseller = () => {
         fetchBest()
     },[])
   return (
-    <div>
-      <h1 className='bestList'>NYT Best Sellers</h1>
+    <div className='bestSeller'>
+    <img className='nyt' src={image}/>
+     
       <div className="books">
             {books.map((book) => {
               const {rank,title,author,book_image,description,amazon_product_url}=book
@@ -22,7 +23,6 @@ const Bestseller = () => {
                   <div>
                     <img src={book_image} alt={title}/>
                   </div>
-                  
                   <div className='details'>
                   <span className="author"><b>Rank:</b> {rank}</span>
                   <span className="author"><b>Author:</b> {author}</span>

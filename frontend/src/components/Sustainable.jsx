@@ -1,5 +1,9 @@
 import React from 'react';
-
+import green from '../images/bgreen.jpg';
+import delivery from '../images/delivery.png';
+import ab from '../images/applebooks.png';
+import gpb from '../images/gplaybooks.png';
+import kindle from '../images/kindle.jpg';
 const Sustainable = () => {
   return (
     <div className='sustain'>
@@ -33,21 +37,100 @@ const Sustainable = () => {
         enjoyable experience for all.</p>
       </div>
       <h2>Articles</h2>
+      <div className='articles'>
       <div className='articleLinks'>
-      
+      <img src={green}/>
       <p>Paper, paper, and more paper! Books are...</p>
-      <a href='https://www.youngwriters.co.uk/blog/sustainable-reading'>Read More</a>
+      <a href='https://www.youngwriters.co.uk/blog/sustainable-reading'>Read More 
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>  
+      </a>
+      
       </div>
       <div className='articleLinks'>
-      
-      <p>Paper, paper, and more paper! Books are...</p>
-      <a href='https://www.youngwriters.co.uk/blog/sustainable-reading'>Read More</a>
+      <img src={green}/>
+      <p>Both printed and digital books have an environmental...</p>
+      <a href='https://www.lifegate.com/sustainable-book-reading'>Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>  
+      </a>
       </div>
       <div className='articleLinks'>
-      
-      <p>Paper, paper, and more paper! Books are...</p>
-      <a href='https://www.youngwriters.co.uk/blog/sustainable-reading'>Read More</a>
+      <img src={green}/>
+      <p>When it comes to thinking about the climate...</p>
+      <a href='https://zerowastememoirs.com/baby-step-10-book-sustainability/'>Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>  
+      </a>
       </div>
+      </div>
+
+      <div className='ourTips'>
+      <h3>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+</svg>TIPS</h3>
+<ul>
+  <li><span className='subheading'>Utilize your local library : </span>  Instead of buying new books,
+   borrow them from your local library.</li>
+  <li><span className='subheading'>Share and exchange books : </span> Sharing books not only reduces
+   the need for new purchases but also fosters a sense of community.</li>
+  <li><span className='subheading'>Buy used or secondhand books : </span> When purchasing books, opt for used
+   or secondhand copies instead of buying new ones. </li>
+  <li><span className='subheading'>Choose sustainable reading materials : </span>Look for books made from
+   recycled or responsibly sourced paper. </li>
+  <li><span className='subheading'>Read digitally : </span>Embrace e-books and audiobooks as they require no 
+  physical materials and significantly reduce paper waste.</li>
+  <li><span className='subheading'>Donate or recycle unwanted books : </span>If you have books you no longer 
+  need or want, donate them to libraries, schools, or charities.</li>
+  <li><span className='subheading'>Choose sustainable bookmarks : </span> Instead of using disposable 
+  bookmarks or scraps of paper, opt for sustainable alternatives.</li>
+</ul>
+      </div>
+      <div className='packaging'>
+      <img src={delivery}/>
+      
+      <h2>Sustainable Packaging and Delivery</h2>
+      <ul>
+        <li>We use minimal packaging whenever possible and
+         avoid excessive layers, fillers, or unnecessary plastic wraps.</li>
+         <li>We opt for packaging materials that are recyclable,
+          biodegradable, or made from renewable resources.</li>
+         <li>We uilize packaging materials made from recycled 
+         content to reduce the demand for new materials. </li>
+         <li>We select packaging sizes that fit the product snugly,
+          minimizing the need for excess filler materials. </li>
+      </ul>
+      </div>
+      <h3 className='head'>Suggestions</h3>
+      <div className='suggestions'>
+      <div className='sugg'>
+      <a href='https://www.amazon.in/Kindle-eBooks/b?ie=UTF8&node=1634753031'>
+      <img src={kindle}/>
+      </a>
+      <h5>Amazon Kindle</h5>
+      
+      </div>
+      <div className='sugg'>
+      <a href='https://play.google.com/store/books?hl=en_IN&gl=US'>
+      <img src={gpb}/>
+      </a>
+      <h5>Google Play Books</h5>
+      </div>
+
+      <div className='sugg'>
+      <a href='https://www.apple.com/in/apple-books/'>
+      <img src={ab}/>
+      </a>
+      <h5>Apple Books</h5>
+      </div>
+      
+
+      </div>
+      
 
       
     </div>

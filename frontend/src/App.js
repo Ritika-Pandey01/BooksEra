@@ -15,6 +15,7 @@ import Summary from './components/admin/Summary';
 import CreateProducts from './components/admin/CreateProducts';
 import Bestseller from './components/Bestseller';
 import Sustainable from './components/Sustainable';
+import AboutUs from './components/AboutUs';
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<AboutUs />} />
 
           {/* Nesting routes for admin dashboard*/}
           <Route path="/admin" element={<Admindashboard />} >

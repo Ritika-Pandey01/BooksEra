@@ -16,7 +16,7 @@ const Navbar = () => {
       </Link>
       <Link to="/sustain">Sustainable</Link>
       <Link to="/bestseller">BestSellers</Link>
-      <Link to="/contact">Contact Us</Link>
+      <Link to="/about">About Us</Link>
       {auth._id ? (
         <Links>
         {auth.isAdmin?
