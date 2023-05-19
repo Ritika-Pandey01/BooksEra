@@ -689,10 +689,15 @@ a:active {
 
 }
 
-.aboutus p {
+.aboutus .para {
   padding: 1rem 4rem 2rem 4rem;
   text-align: justify;
   line-height: 2rem;
+}
+
+.aboutus .info {
+  padding: 0 4rem;
+  text-align: justify;
 }
 
 .aboutus p b {
@@ -714,12 +719,18 @@ a:active {
 }
 
 .contactus {
-  margin: 0 16rem;
+  margin: 2rem 16rem;
   padding: 4rem;
   box-shadow: -5px -5px 10px rgba(231, 230, 232, 0.5),
     2px 2px 5px rgba(67, 56, 77, 0.3);
   background-color: #e1f4b975;
 
+}
+
+.about .info .link {
+  text-decoration: none;
+  color: #461e5c;
+  font-weight: 600;
 }
 
 
