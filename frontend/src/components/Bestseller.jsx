@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import image from '../images/nytbest.png';
 const Bestseller = () => {
     const [books,setBook]=useState([]);
     useEffect(()=>{
@@ -12,7 +11,7 @@ const Bestseller = () => {
     },[])
   return (
     <div className='bestSeller'>
-    <img className='nyt' src={image}/>
+    <img className='nyt' src='https://res.cloudinary.com/booksera/image/upload/v1684498833/Books/nytbest_rr08ou.png'/>
      
       <div className="books">
             {books.map((book) => {

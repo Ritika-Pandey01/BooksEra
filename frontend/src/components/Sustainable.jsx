@@ -1,9 +1,4 @@
 import React from 'react';
-import green from '../images/bgreen.jpg';
-import delivery from '../images/delivery.png';
-import ab from '../images/applebooks.png';
-import gpb from '../images/gplaybooks.png';
-import kindle from '../images/kindle.jpg';
 const Sustainable = () => {
   return (
     <div className='sustain'>
@@ -39,7 +34,7 @@ const Sustainable = () => {
       <h2>Articles</h2>
       <div className='articles'>
       <div className='articleLinks'>
-      <img src={green}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498432/Books/bgreen_rqrd0m.jpg'/>
       <p>Paper, paper, and more paper! Books are...</p>
       <a href='https://www.youngwriters.co.uk/blog/sustainable-reading'>Read More 
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -49,7 +44,7 @@ const Sustainable = () => {
       
       </div>
       <div className='articleLinks'>
-      <img src={green}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498432/Books/bgreen_rqrd0m.jpg'/>
       <p>Both printed and digital books have an environmental...</p>
       <a href='https://www.lifegate.com/sustainable-book-reading'>Read More
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -58,7 +53,7 @@ const Sustainable = () => {
       </a>
       </div>
       <div className='articleLinks'>
-      <img src={green}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498432/Books/bgreen_rqrd0m.jpg'/>
       <p>When it comes to thinking about the climate...</p>
       <a href='https://zerowastememoirs.com/baby-step-10-book-sustainability/'>Read More
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -91,7 +86,7 @@ const Sustainable = () => {
 </ul>
       </div>
       <div className='packaging'>
-      <img src={delivery}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498828/Books/delivery_qbomyp.png'/>
       
       <h2>Sustainable Packaging and Delivery</h2>
       <ul>
@@ -109,21 +104,21 @@ const Sustainable = () => {
       <div className='suggestions'>
       <div className='sugg'>
       <a href='https://www.amazon.in/Kindle-eBooks/b?ie=UTF8&node=1634753031'>
-      <img src={kindle}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498823/Books/kindle_qg9tcr.jpg'/>
       </a>
       <h5>Amazon Kindle</h5>
       
       </div>
       <div className='sugg'>
       <a href='https://play.google.com/store/books?hl=en_IN&gl=US'>
-      <img src={gpb}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498775/Books/gplaybooks_xd0bkf.png'/>
       </a>
       <h5>Google Play Books</h5>
       </div>
 
       <div className='sugg'>
       <a href='https://www.apple.com/in/apple-books/'>
-      <img src={ab}/>
+      <img src='https://res.cloudinary.com/booksera/image/upload/v1684498733/Books/applebooks_rkttrw.png'/>
       </a>
       <h5>Apple Books</h5>
       </div>
