@@ -44,6 +44,26 @@ The following environment variables are to be added for the backend .env file
 
 
 ## Screenshots
+- Homepage:
+
+![Homepage - BooksEra](https://github.com/Ritika-Pandey01/BooksEra/assets/88720646/71aa1ac6-49de-4052-a51b-9d4d2fedb10a)
+
+- Login Page:
+
+![Login](https://github.com/Ritika-Pandey01/BooksEra/assets/88720646/666d6e31-0d7f-4922-bf13-53beaefa732b)
+
+- Bestsellers Page:
+
+![Bestsellers](https://github.com/Ritika-Pandey01/BooksEra/assets/88720646/3f20097a-6397-4946-a0c0-d87ab30b5cec)
+
+- Cart 
+
+![Cart](https://github.com/Ritika-Pandey01/BooksEra/assets/88720646/d48158c8-4f74-42b7-9f93-a87b594328d7)
+
+
+- Admin Page
+
+![Admin Page](https://github.com/Ritika-Pandey01/BooksEra/assets/88720646/198c46e1-ea14-4aa8-be6b-fb090ac2e343)
 
 
 ## Run Locally
